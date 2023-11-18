@@ -1,2 +1,2 @@
 # etrigan-extension
-Chrome extension to spoof fingerprints
+Gone, gone the form of bot, arise a human in its spot

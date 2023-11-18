@@ -5,7 +5,7 @@
     "manifest_version": 2,
     "content_scripts": [{
         "run_at": "document_start",
-        "js": ["etrigan.js"],
-	"matches": ["https://google.com"]
+	"matches": ["https://example.com/*"],
+        "js": ["etrigan.js"]
     }]
 }

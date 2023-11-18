@@ -1,0 +1,11 @@
+{
+    "name": "etrigan",
+    "description": "Gone, gone the form of bot, arise a human in its spot.",
+    "version": "1",
+    "manifest_version": 2,
+    "content_scripts": [{
+        "run_at": "document_start",
+        "js": ["etrigan.js"],
+        "matches": ["*"]
+    }]
+}

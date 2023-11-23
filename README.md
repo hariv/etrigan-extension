@@ -6,9 +6,10 @@ Gone, gone the form of bot, arise a human in its spot
 - Color Depth 
 - Platform
 - Vendor
-- osCPU
-- Hardware Concurrency 
+- oscpu
+- Hardware Concurrency
 
 
 ## Notes
 - Specify HTTPS at the time of use
+- Only one spoofing per page load, redeclaring will throw an error

@@ -2,9 +2,10 @@
 Gone, gone the form of bot, arise a human in its spot
 
 
-## Currently Supporting:
+## Currently Supporting
 - Color Depth 
+- Platform
 
 
-## Notes: 
+## Notes
 - Specify HTTPS at the time of use

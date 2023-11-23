@@ -16,7 +16,7 @@ export function vendor(vendorName = "Google Inc.") {
 
 // OsCpu Value default to Windows 6.0
 // Note: Testing result indicated default being undefined 
-// https://developer.mozilla.org/en-US/docs/Web/API/Navigator/oscpu 
+// To see other format, check: https://developer.mozilla.org/en-US/docs/Web/API/Navigator/oscpu 
 export function oscpu(oscpuInfo = "Windows NT 6.0") {
   Object.defineProperty(navigator, 'oscpu', {
     value: oscpuInfo,
@@ -36,6 +36,25 @@ export function platform(platform = "Win32") {
   });
 }
 
+export function screenFrame(aTop, aLeft, width, height) {
+
+  // Representing the top edge 
+  Object.defineProperty(screen, 'availTop', {
+    value: aTop,
+  });
+
+  Object.defineProperty(screen, 'availLeft', {
+    value: aLeft,
+  });
+
+  Object.defineProperty(screen, 'width', {
+    value: width,
+  });
+
+  Object.defineProperty(screen, 'height', {
+    value: height,
+  });
+}
 
 
 

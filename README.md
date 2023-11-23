@@ -8,6 +8,7 @@ Gone, gone the form of bot, arise a human in its spot
 - Vendor
 - oscpu
 - Hardware Concurrency
+- Screen Frame
 
 
 ## Notes

@@ -36,14 +36,25 @@ export function platform(platform = "Win32") {
   });
 }
 
-export function screenFrame(aTop, aLeft, width, height) {
+export function screenFrame(aTop, aLeft, aWidth, aHeight, width, height) {
   // Representing the top edge 
+  // frame[0] = width - aWidth - aLeft
+  // frame[1] = height - aHeight - aTop
+
   Object.defineProperty(screen, 'availTop', {
     value: aTop,
   });
 
   Object.defineProperty(screen, 'availLeft', {
     value: aLeft,
+  });
+
+  Object.defineProperty(screen, 'availWidth', {
+    value: aWidth,
+  });
+
+  Object.defineProperty(screen, 'availHeight', {
+    value: aHeight,
   });
 
   Object.defineProperty(screen, 'width', {
@@ -75,3 +86,4 @@ export function language(lang = "en-US", langArr = ["en-US", "zh-CN", "ja-JP"]){
     value: langArr,
   });
 }
+

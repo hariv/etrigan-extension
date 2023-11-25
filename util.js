@@ -63,5 +63,15 @@ export function deviceMemory(memory = 8){
 }
 
 
+// Language 
+// If there are only one languages -> Chromium 
+export function language(lang = "en-US", langArr = ["en-US", "zh-CN", "ja-JP"]){
+  Object.defineProperty(navigator, 'language', {
+    value: lang,
+  });
 
-
+  // languages
+  Object.defineProperty(navigator, 'languages', {
+    value: langArr,
+  });
+}

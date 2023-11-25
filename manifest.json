@@ -3,6 +3,10 @@
     "description": "Gone, gone the form of bot, arise a human in its spot.",
     "version": "1",
     "manifest_version": 2,
+    "action": {
+	"default_title": "Popup",
+	"default_popup": "popup.html"
+    },
     "content_scripts": [{
         "run_at": "document_start",
 	"matches": ["https://*/*"],

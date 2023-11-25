@@ -11,6 +11,11 @@ Gone, gone the form of bot, arise a human in its spot
 - Screen Frame
 - Device Memory 
 - Language
+- Hardware Concurrency
+- TouchSupport 
+  - TODO: Integrate them into one function and port it into extension 
+  - TODO: fake a touchEvent instance class instead of only returning True
+  - TODO: Add spoofing for touchStart too
 
 
 ## Notes

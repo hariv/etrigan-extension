@@ -9,6 +9,7 @@ Gone, gone the form of bot, arise a human in its spot
 - oscpu
 - Hardware Concurrency
 - Screen Frame
+- Device Memory 
 
 
 ## Notes

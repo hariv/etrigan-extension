@@ -37,7 +37,6 @@ export function platform(platform = "Win32") {
 }
 
 export function screenFrame(aTop, aLeft, width, height) {
-
   // Representing the top edge 
   Object.defineProperty(screen, 'availTop', {
     value: aTop,
@@ -53,6 +52,13 @@ export function screenFrame(aTop, aLeft, width, height) {
 
   Object.defineProperty(screen, 'height', {
     value: height,
+  });
+}
+
+// Device Memory 
+export function deviceMemory(memory = 8){
+  Object.defineProperty(navigator, 'deviceMemory', {
+    value: memory,
   });
 }
 

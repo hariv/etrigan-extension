@@ -87,3 +87,9 @@ export function language(lang = "en-US", langArr = ["en-US", "zh-CN", "ja-JP"]){
   });
 }
 
+// Hardware Concurrency
+export function hardwareConcurrency(opt = 4){
+  Object.defineProperty(navigator, 'hardwareConcurrency', {
+    value: opt,
+  });
+}

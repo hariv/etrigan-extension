@@ -12,7 +12,7 @@ Gone, gone the form of bot, arise a human in its spot
 - Device Memory 
 - Language
 - Hardware Concurrency
-- TouchSupport 
+- TouchSupport， timezone
   - TODO: Integrate them into one function and port it into extension 
 
 

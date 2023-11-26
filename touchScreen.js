@@ -5,6 +5,9 @@ const puppeteer = require("puppeteer");
 const withUtils = require("puppeteer-extra-plugin-stealth/evasions/_utils/withUtils.js");
 
 export async function touchScreen(touchPoint = 5) {
+  const browser = await puppeteer.launch({ headless: false });
+  const page = await browser.newPage();
+
   // maxTouch Point return anything greater than 0
   Object.defineProperty(navigator, "maxTouchPoints", {
     value: touchPoint,
@@ -23,8 +26,8 @@ export async function touchScreen(touchPoint = 5) {
     });
   });
 
-  // On touch start is evaulated to true 
-  Object.defineProperty(window, 'ontouchstart', {
+  // On touch start is evaulated to true
+  Object.defineProperty(window, "ontouchstart", {
     value: true,
   });
 }

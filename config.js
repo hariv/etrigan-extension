@@ -270,6 +270,27 @@ var config = [
 	    "\"height\", {value: etrigan_placeholder_6});",
 	value: [1, 2, 3, 4, 5, 6]
     },
+    {
+	featureName: "touchSupportMaxTouchPoints",
+	code: "Object.defineProperty(navigator, " +
+	    "\"maxTouchPoints\", {value: etrigan_placeholder});",
+	value: [10]
+    },
+    {
+	featureName: "touchSupportTouchEvent",
+	code: "Object.defineProperty(document, " +
+	    "\"createEvent\", { value: function(type) {" +
+	    "if (type === \"TouchEvent\") { return etrigan_placeholder; }" +
+	    "return new Event(type);}" +
+	    "});",
+	value: true
+    }
+    {
+	featureName: "touchSupportTouchStart",
+	code: "Object.defineProperty(window, " +
+	    "\"ontouchstart\", {value: etrigan_placeholder, });",
+	value: true
+    }
 ];
 globalThis.config = config;
 

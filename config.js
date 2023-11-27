@@ -212,7 +212,7 @@ var config = [
     },
     {
 	featureName: "plugins",
-	code: "Object.defineProperty(window, \"plugins\", { " +
+	code: "Object.defineProperty(navigator, \"plugins\", { " +
 	    "value: etrigan_placeholder});",
 	value: "let plugins = [];" +
 	    "let p = {};" +
@@ -225,6 +225,12 @@ var config = [
 	    "p[1].suffixes = \"pdf\";" +
 	    "p[1].type = \"text/pdf\";" +
 	    "plugins.push(p);";
+    },
+    {
+	featureName: "vendorFlavors",
+	code: "Object.defineProperty(window, " +
+	    "\"etrigan_placeholder\", {value: {}});",
+	value: "puffinDevice"
     }
 ];
 globalThis.config = config;

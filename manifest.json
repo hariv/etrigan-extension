@@ -1,15 +1,10 @@
 {
     "name": "etrigan",
     "description": "Gone, gone the form of bot, arise a human in its spot.",
-    "version": "1",
-    "manifest_version": 3,
-    "action": {
-	"default_title": "Popup",
-	"default_popup": "popup.html"
-    },
+    "version": "1.0",
+    "manifest_version": 2,
     "content_scripts": [{
-        "run_at": "document_start",
 	"matches": ["https://*/*"],
-        "js": ["etrigan.js"]
+	"js": ["config.js", "etrigan.js"]
     }]
 }

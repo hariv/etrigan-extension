@@ -167,7 +167,7 @@ var config = [
 	    "}" +
 	    "else {" +
 	    "for (let i = 0; i < parseInt(etriganTarget); i++) { " +
-	    "if (q == \"(min-monochrome: " + i.toString() + ")\") { " +
+	    "if (q == \"(min-monochrome: i.toString())\") { " +
 	    "res.matches = false;" +
 	    "}" +
 	    "}" +
@@ -224,13 +224,27 @@ var config = [
 	    "p[1] = {};" +
 	    "p[1].suffixes = \"pdf\";" +
 	    "p[1].type = \"text/pdf\";" +
-	    "plugins.push(p);";
+	    "plugins.push(p);",
     },
     {
 	featureName: "vendorFlavors",
 	code: "Object.defineProperty(window, " +
 	    "\"etrigan_placeholder\", {value: {}});",
 	value: "puffinDevice"
+    },
+    {
+	featureName: "languages",
+	code: "Object.defineProperty(navigator, " +
+	    "\"language\", {value :undefined});" +
+	    "Object.defineProperty(navigator, " +
+	    "\"userLanguage\", {value: undefined});" +
+	    "Object.defineProperty(navigator, " +
+	    "\"browserLanguage\", {value: undefined});" +
+	    "Object.defineProperty(navigator, " +
+	    "\"systemLanguage\", {value: undefined});" +
+	    "Object.defineProperty(navigator, " +
+	    "\"languages\", {value: \"etrigan_placeholder\"});",
+	value: "en-US,zh-CN,ja-JP"
     }
 ];
 globalThis.config = config;

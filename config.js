@@ -253,7 +253,23 @@ var config = [
 	    "Object.defineProperty(screen, " +
 	    "\"height\", {value: etrigan_placeholder_2});",
 	value: [1920, 1080]
-    }
+    },
+    {
+	featureName: "screenFrame",
+	code: "Object.defineProperty(screen, " +
+	    "\"availTop\", {value: etrigan_placeholder_1});" +
+	    "Object.defineProperty(screen, " +
+	    "\"availLeft\", {value: etrigan_placeholder_2});" +
+	    "Object.defineProperty(screen, " +
+	    "\"availWidth\", {value: etrigan_placeholder_3});" +
+	    "Object.defineProperty(screen, " +
+	    "\"availHeight\", {value: etrigan_placeholder_4});" +
+	    "Object.defineProperty(screen, " +
+	    "\"width\", {value: etrigan_placeholder_5});" +
+	    "Object.defineProperty(screen, " +
+	    "\"height\", {value: etrigan_placeholder_6});",
+	value: [1, 2, 3, 4, 5, 6]
+    },
 ];
 globalThis.config = config;
 

@@ -199,15 +199,33 @@ var config = [
     },
     {
 	featureName: "timezone",
-	code: "Object.defineProperty(Intl.DateTimeFormat.prototype, \"resolvedOptions\", { value: function() {return {timeZone: \"etrigan_placeholder\"}; },});",
+	code: "Object.defineProperty(Intl.DateTimeFormat.prototype, " +
+	    "\"resolvedOptions\", { value: function() { " +
+	    "return {timeZone: \"etrigan_placeholder\"}; },});",
 	value: "Asia/Tokyo"
     },
     {
 	featureName: "colorDepth",
-	code: "Object.defineProperty(window, \"colorDepth\", {value: etrigan_placeholder});",
+	code: "Object.defineProperty(window, \"colorDepth\", {" +
+	    "value: etrigan_placeholder});",
 	value: "24"
     },
-    
+    {
+	featureName: "plugins",
+	code: "Object.defineProperty(window, \"plugins\", { " +
+	    "value: etrigan_placeholder});",
+	value: "let plugins = [];" +
+	    "let p = {};" +
+	    "p.name = \"Etrigan Plugin\";" +
+	    "p.description = \"Etrigan Plugin for Paper\";"+
+	    "p[0] = {};" +
+	    "p[0].suffixes = \"pdf\";" +
+	    "p[0].type = \"application/pdf\";" +
+	    "p[1] = {};" +
+	    "p[1].suffixes = \"pdf\";" +
+	    "p[1].type = \"text/pdf\";" +
+	    "plugins.push(p);";
+    }
 ];
 globalThis.config = config;
 

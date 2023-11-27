@@ -235,7 +235,7 @@ var config = [
     {
 	featureName: "languages",
 	code: "Object.defineProperty(navigator, " +
-	    "\"language\", {value :undefined});" +
+	    "\"language\", {value: undefined});" +
 	    "Object.defineProperty(navigator, " +
 	    "\"userLanguage\", {value: undefined});" +
 	    "Object.defineProperty(navigator, " +
@@ -245,6 +245,14 @@ var config = [
 	    "Object.defineProperty(navigator, " +
 	    "\"languages\", {value: \"etrigan_placeholder\"});",
 	value: "en-US,zh-CN,ja-JP"
+    },
+    {
+	featureName: "screenResolution",
+	code: "Object.defineProperty(screen, " +
+	    "\"width\", {value: etrigan_placeholder_1});" +
+	    "Object.defineProperty(screen, " +
+	    "\"height\", {value: etrigan_placeholder_2});",
+	value: [1920, 1080]
     }
 ];
 globalThis.config = config;

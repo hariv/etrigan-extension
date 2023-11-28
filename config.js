@@ -295,6 +295,34 @@ var config = [
         value: 0
     },
     {
+	featureName: "openDatabase",
+	code: "Object.defineProperty(window, " +
+	    "\"openDatabase\", {value: " +
+	    "etrigan_placeholder});",
+	value: true
+    },
+    {
+	featureName: "indexedDB", // does not support undefined for now
+	code: "Object.defineProperty(window, " +
+	    "\"indexedDB\", {value: " +
+	    "etrigan_placeholder});",
+	value: true
+    },
+    {
+	featureName: "sessionStorage",
+	code: "Object.defineProperty(window, " +
+	    "\"sessionStorage\", {value: " +
+	    "etrigan_placeholder});",
+	value: true
+    },
+    {
+	featureName: "localStorage",
+	code: "Object.defineProperty(window, " +
+	    "\"sessionStorage\", {value: " +
+	    "etrigan_placeholder});",
+	value: true
+    },
+    {
 	featureName: "contrast",
 	code: "let originalMatchMedia = window.matchMedia;" +
 	    "let etriganTarget = \"etrigan_placeholder\";" +

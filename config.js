@@ -482,7 +482,7 @@ var config = [
 	    "res.matches = false;" +
 	    "}" +
 	    "else {" +
-	    "if (q == \"(color-gamut: " + etriganTarget + ")\") { " +
+	    "if (q == \"(color-gamut: etriganTarget)\") { " +
 	    "res.matches = true;" +
 	    "}" +
 	    "}" +

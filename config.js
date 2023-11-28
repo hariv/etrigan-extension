@@ -30,6 +30,271 @@ var config = [
 	value: 8
     },
     {
+	featureName: "mathacos",
+	code: "let fallbackfn = function() {return 0;}" +
+	    "let originalFunction = Math.acos || fallbackfn;" +
+	    "Math.acos = function(i) { " +
+	    "let ans = originalFunction(i);" +
+	    "if (i == 0.123124234234234242) { " +
+	    "ans = etrigan_placeholder; } " +
+	    "return ans; }",
+	value: 0 
+    },
+    {
+	featureName: "mathacosh",
+	code: "let fallbackfn = function() {return 0;}" +
+	    "let originalFunction = Math.acosh || fallbackfn;" +
+	    "Math.acosh = function(i) { " +
+	    "let ans = originalFunction(i);" +
+	    "if (i == 1e308) { " +
+	    "ans = etrigan_placeholder; } " +
+	    "return ans; }",
+	value: 0
+    },
+    {
+	featureName: "mathasin",
+        code: "let fallbackfn = function() {return 0;}"	+
+            "let originalFunction = Math.asin || fallbackfn;" +
+            "Math.acosh = function(i) { " +
+            "let ans = originalFunction(i);" +
+            "if (i == 0.123124234234234242) { " +
+            "ans = etrigan_placeholder; } " +
+            "return ans; }",
+        value: 0
+    },
+    {
+        featureName: "mathasinh",
+        code: "let fallbackfn = function() {return 0;}" +
+            "let originalFunction = Math.asinh || fallbackfn;" +
+            "Math.acosh = function(i) { " +
+            "let ans = originalFunction(i);" +
+            "if (i == 1) { " +
+            "ans = etrigan_placeholder; } " +
+            "return ans; }",
+        value: 0
+    },
+    {
+        featureName: "mathatan",
+        code: "let fallbackfn = function() {return 0;}" +
+            "let originalFunction = Math.atan || fallbackfn;" +
+            "Math.acosh = function(i) { " +
+            "let ans = originalFunction(i);" +
+            "if (i == 0.5) { " +
+            "ans = etrigan_placeholder; } " +
+            "return ans; }",
+        value: 0
+    },
+    {
+        featureName: "mathatanh",
+        code: "let fallbackfn = function() {return 0;}" +
+            "let originalFunction = Math.atanh || fallbackfn;" +
+            "Math.acosh = function(i) { " +
+            "let ans = originalFunction(i);" +
+            "if (i == 0.5) { " +
+            "ans = etrigan_placeholder; } " +
+            "return ans; }",
+        value: 0
+    },
+    {
+        featureName: "mathsin",
+        code: "let fallbackfn = function() {return 0;}" +
+            "let originalFunction = Math.sin || fallbackfn;" +
+            "Math.acosh = function(i) { " +
+            "let ans = originalFunction(i);" +
+            "if (i == -1e300) { " +
+            "ans = etrigan_placeholder; } " +
+            "return ans; }",
+        value: 0
+    },
+    {
+        featureName: "mathsinh",
+        code: "let fallbackfn = function() {return 0;}" +
+            "let originalFunction = Math.sinh || fallbackfn;" +
+            "Math.acosh = function(i) { " +
+            "let ans = originalFunction(i);" +
+            "if (i == 1) { " +
+            "ans = etrigan_placeholder; } " +
+            "return ans; }",
+        value: 0
+    },
+    {
+        featureName: "mathcos",
+        code: "let fallbackfn = function() {return 0;}" +
+            "let originalFunction = Math.cos || fallbackfn;" +
+            "Math.acosh = function(i) { " +
+            "let ans = originalFunction(i);" +
+            "if (i == 10.000000000123) { " +
+            "ans = etrigan_placeholder; } " +
+            "return ans; }",
+        value: 0
+    },
+    {
+        featureName: "mathcosh",
+        code: "let fallbackfn = function() {return 0;}" +
+            "let originalFunction = Math.cosh || fallbackfn;" +
+            "Math.acosh = function(i) { " +
+            "let ans = originalFunction(i);" +
+            "if (i == 1) { " +
+            "ans = etrigan_placeholder; } " +
+            "return ans; }",
+        value: 0
+    },
+    {
+        featureName: "mathtan",
+        code: "let fallbackfn = function() {return 0;}" +
+            "let originalFunction = Math.tan || fallbackfn;" +
+            "Math.acosh = function(i) { " +
+            "let ans = originalFunction(i);" +
+            "if (i == -1e300) { " +
+            "ans = etrigan_placeholder; } " +
+            "return ans; }",
+        value: 0
+    },
+    {
+        featureName: "mathtanh",
+        code: "let fallbackfn = function() {return 0;}" +
+            "let originalFunction = Math.tanh || fallbackfn;" +
+            "Math.acosh = function(i) { " +
+            "let ans = originalFunction(i);" +
+            "if (i == 1) { " +
+            "ans = etrigan_placeholder; } " +
+            "return ans; }",
+        value: 0
+    },
+    {
+        featureName: "mathexp",
+        code: "let fallbackfn = function() {return 0;}" +
+            "let originalFunction = Math.exp || fallbackfn;" +
+            "Math.acosh = function(i) { " +
+            "let ans = originalFunction(i);" +
+            "if (i == 1) { " +
+            "ans = etrigan_placeholder; } " +
+            "return ans; }",
+        value: 0
+    },
+    {
+        featureName: "mathexpm1",
+        code: "let fallbackfn = function() {return 0;}" +
+            "let originalFunction = Math.expm1 || fallbackfn;" +
+            "Math.acosh = function(i) { " +
+            "let ans = originalFunction(i);" +
+            "if (i == 1) { " +
+            "ans = etrigan_placeholder; } " +
+            "return ans; }",
+        value: 0
+    },
+    {
+        featureName: "mathlog1p",
+        code: "let fallbackfn = function() {return 0;}" +
+            "let originalFunction = Math.log1p || fallbackfn;" +
+            "Math.acosh = function(i) { " +
+            "let ans = originalFunction(i);" +
+            "if (i == 10) { " +
+            "ans = etrigan_placeholder; } " +
+            "return ans; }",
+        value: 0
+    },
+    {
+        featureName: "mathpowpi",
+        code: "let originalFunction = Math.pow;" +
+            "Math.pow = function(i, j) { " +
+            "let ans = originalFunction(i, j);" +
+            "if (j == -100) { " +
+            "ans = etrigan_placeholder; } " +
+            "return ans; }",
+        value: 0
+    },
+    {
+	featureName: "mathacoshpf",
+	code: "let originalFunction = Math.log;" +
+	    "Math.log = function(i) { " +
+	    "let ans = originalFunction(i);" +
+	    "if (i == 2e154) { " +
+	    "ans = etrigan_placeholder; } " +
+	    "return ans; }",
+	value: 0
+    },
+    {
+	featureName: "mathasinhpf",
+        code: "let originalFunction = Math.log;" +
+            "Math.log = function(i) { "	+
+            "let ans = originalFunction(i);" +
+            "if (Math.floor(i) == 2) { " +
+            "ans = etrigan_placeholder; } " +
+            "return ans; }",
+        value: 0
+    },
+    {
+	featureName: "mathatanhpf",
+        code: "let originalFunction = Math.log;" +
+            "Math.log = function(i) { "	+
+            "let ans = originalFunction(i);" +
+            "if (i == 3) { " +
+            "ans = etrigan_placeholder; } " +
+            "return ans; }",
+        value: 0
+    },
+    {
+	featureName: "mathsinhpf",
+        code: "let originalFunction = Math.exp;" +
+            "Math.exp = function(i) { "	+
+            "let ans = originalFunction(i);" +
+            "if (i == 1) { " +
+            "ans = etrigan_placeholder; } " +
+            "return ans; }",
+        value: 0
+    },
+    {
+	featureName: "mathcoshpf",
+        code: "let originalFunction = Math.exp;" +
+            "Math.exp = function(i) { "	+
+            "let ans = originalFunction(i);" +
+            "if (i == 1) { " +
+            "ans = etrigan_placeholder; } " +
+            "return ans; }",
+        value: 0
+    },
+    {
+        featureName: "mathtanhpf",
+        code: "let originalFunction = Math.exp;" +
+            "Math.exp = function(i) { " +
+            "let ans = originalFunction(i);" +
+            "if (i == 2) { " +
+            "ans = etrigan_placeholder; } " +
+            "return ans; }",
+        value: 0
+    },
+    {
+        featureName: "mathexpm1pf",
+        code: "let originalFunction = Math.exp;" +
+            "Math.exp = function(i) { " +
+            "let ans = originalFunction(i);" +
+            "if (i == 1) { " +
+            "ans = etrigan_placeholder; } " +
+            "return ans; }",
+        value: 0
+    },
+    {
+        featureName: "mathexpm1pf",
+        code: "let originalFunction = Math.exp;" +
+            "Math.exp = function(i) { " +
+            "let ans = originalFunction(i);" +
+            "if (i == 1) { " +
+            "ans = etrigan_placeholder; } " +
+            "return ans; }",
+        value: 0
+    },
+    {
+        featureName: "log1ppf",
+        code: "let originalFunction = Math.exp;" +
+            "Math.exp = function(i) { " +
+            "let ans = originalFunction(i);" +
+            "if (i == 2) { " +
+            "ans = etrigan_placeholder; } " +
+            "return ans; }",
+        value: 0
+    },
+    {
 	featureName: "contrast",
 	code: "let originalMatchMedia = window.matchMedia;" +
 	    "let etriganTarget = \"etrigan_placeholder\";" +
@@ -284,7 +549,7 @@ var config = [
 	    "return new Event(type);}" +
 	    "});",
 	value: true
-    }
+    },
     {
 	featureName: "touchSupportTouchStart",
 	code: "Object.defineProperty(window, " +

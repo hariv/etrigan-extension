@@ -1,5 +1,129 @@
 var config = [
     {
+	featureName: "fontPreferencesMono",
+	code: "const originalBoundingClientRect = "+
+	    "Element.prototype.getBoundingClientRect;" +
+	    "Element.prototype.getBoundingClientRect = function() {" +
+	    "const originalResult = originalGetBoundingClientRect.call(this);" +
+	    "if (this instanceof Element && this.tagName.toLowerCase() == \"span\") {" +
+	    "const computedStyle = window.getComputedStyle(this);" +
+	    "if (computedStyle.fontFamily == \"monospace\") {" +
+	    "const modifiedResult = {" +
+	    "top: originalResult.top," +
+	    "right: originalResult.right," +
+	    "bottom: originalResult.bottom," +
+	    "left: originalResult.left," +
+	    "width: etrigan_placeholder" +
+	    "height: originalResult.height};" +
+	    "return modifiedResult;" +
+	    "}}" +
+	    "return originalResult;}",
+	value: 140
+    },
+    {
+	featureName: "fontPreferencesSans",
+	code: "const originalBoundingClientRect = "+
+            "Element.prototype.getBoundingClientRect;" +
+            "Element.prototype.getBoundingClientRect = function() {" +
+            "const originalResult = originalGetBoundingClientRect.call(this);" +
+            "if (this instanceof Element && this.tagName.toLowerCase() == \"span\") {" +
+            "const computedStyle = window.getComputedStyle(this);" +
+            "if (computedStyle.fontFamily == \"sans-serif\") {" +
+            "const modifiedResult = {" +
+            "top: originalResult.top," +
+            "right: originalResult.right," +
+            "bottom: originalResult.bottom," +
+            "left: originalResult.left," +
+            "width: etrigan_placeholder" +
+            "height: originalResult.height};" +
+            "return modifiedResult;" +
+            "}}" +
+            "return originalResult;}",
+        value: 140
+    },
+    {
+        featureName: "fontPreferencesSerif",
+        code: "const originalBoundingClientRect = "+
+            "Element.prototype.getBoundingClientRect;" +
+            "Element.prototype.getBoundingClientRect = function() {" +
+            "const originalResult = originalGetBoundingClientRect.call(this);" +
+            "if (this instanceof Element && this.tagName.toLowerCase() == \"span\") {" +
+            "const computedStyle = window.getComputedStyle(this);" +
+            "if (computedStyle.fontFamily == \"serif\") {" +
+            "const modifiedResult = {" +
+            "top: originalResult.top," +
+            "right: originalResult.right," +
+            "bottom: originalResult.bottom," +
+            "left: originalResult.left," +
+            "width: etrigan_placeholder" +
+            "height: originalResult.height};" +
+            "return modifiedResult;" +
+            "}}" +
+            "return originalResult;}",
+        value: 140
+    },
+    {
+        featureName: "fontPreferencesSystem",
+        code: "const originalBoundingClientRect = "+
+            "Element.prototype.getBoundingClientRect;" +
+            "Element.prototype.getBoundingClientRect = function() {" +
+            "const originalResult = originalGetBoundingClientRect.call(this);" +
+            "if (this instanceof Element && this.tagName.toLowerCase() == \"span\") {" +
+            "const computedStyle = window.getComputedStyle(this);" +
+            "if (computedStyle.fontFamily == \"system-ui\") {" +
+            "const modifiedResult = {" +
+            "top: originalResult.top," +
+            "right: originalResult.right," +
+            "bottom: originalResult.bottom," +
+            "left: originalResult.left," +
+            "width: etrigan_placeholder" +
+            "height: originalResult.height};" +
+            "return modifiedResult;" +
+            "}}" +
+            "return originalResult;}",
+        value: 140
+    },
+    {
+        featureName: "fontPreferencesMin",
+        code: "const originalBoundingClientRect = "+
+            "Element.prototype.getBoundingClientRect;" +
+            "Element.prototype.getBoundingClientRect = function() {" +
+            "const originalResult = originalGetBoundingClientRect.call(this);" +
+            "if (this instanceof Element && this.tagName.toLowerCase() == \"span\") {" +
+            "const computedStyle = window.getComputedStyle(this);" +
+            "if (computedStyle.fontSize == \"1px\") {" +
+            "const modifiedResult = {" +
+            "top: originalResult.top," +
+            "right: originalResult.right," +
+	    "bottom: originalResult.bottom," +
+            "left: originalResult.left," +
+            "width: etrigan_placeholder" +
+            "height: originalResult.height};" +
+            "return modifiedResult;" +
+            "}}" +
+            "return originalResult;}",
+        value: 140
+    },
+    {
+        featureName: "fontPreferencesDefault",
+        code: "const originalBoundingClientRect = "+
+            "Element.prototype.getBoundingClientRect;" +
+            "Element.prototype.getBoundingClientRect = function() {" +
+            "const originalResult = originalGetBoundingClientRect.call(this);" +
+            "if (this instanceof Element && this.tagName.toLowerCase() == \"span\") {" +
+            "const modifiedResult = {" +
+            "top: originalResult.top," +
+            "right: originalResult.right," +
+	    "bottom: originalResult.bottom," +
+            "left: originalResult.left," +
+            "width: etrigan_placeholder" +
+            "height: originalResult.height};" +
+            "return modifiedResult;" +
+            "}" +
+            "return originalResult;}",
+        value: 140
+    },
+    {
 	featureName: "platform",
 	code: "Object.defineProperty(navigator, \"platform\", " +
 	    "{ value: \"etrigan_placeholder\"});",

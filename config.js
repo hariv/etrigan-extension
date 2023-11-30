@@ -4,7 +4,7 @@ var config = [
 	code: "const originalBoundingClientRect = "+
 	    "Element.prototype.getBoundingClientRect;" +
 	    "Element.prototype.getBoundingClientRect = function() {" +
-	    "const originalResult = originalGetBoundingClientRect.call(this);" +
+	    "const originalResult = originalBoundingClientRect.call(this);" +
 	    "if (this instanceof Element && this.tagName.toLowerCase() == \"span\") {" +
 	    "const computedStyle = window.getComputedStyle(this);" +
 	    "if (computedStyle.fontFamily == \"monospace\") {" +
@@ -25,7 +25,7 @@ var config = [
 	code: "const originalBoundingClientRect = "+
             "Element.prototype.getBoundingClientRect;" +
             "Element.prototype.getBoundingClientRect = function() {" +
-            "const originalResult = originalGetBoundingClientRect.call(this);" +
+            "const originalResult = originalBoundingClientRect.call(this);" +
             "if (this instanceof Element && this.tagName.toLowerCase() == \"span\") {" +
             "const computedStyle = window.getComputedStyle(this);" +
             "if (computedStyle.fontFamily == \"sans-serif\") {" +
@@ -46,7 +46,7 @@ var config = [
         code: "const originalBoundingClientRect = "+
             "Element.prototype.getBoundingClientRect;" +
             "Element.prototype.getBoundingClientRect = function() {" +
-            "const originalResult = originalGetBoundingClientRect.call(this);" +
+            "const originalResult = originalBoundingClientRect.call(this);" +
             "if (this instanceof Element && this.tagName.toLowerCase() == \"span\") {" +
             "const computedStyle = window.getComputedStyle(this);" +
             "if (computedStyle.fontFamily == \"serif\") {" +
@@ -67,7 +67,7 @@ var config = [
         code: "const originalBoundingClientRect = "+
             "Element.prototype.getBoundingClientRect;" +
             "Element.prototype.getBoundingClientRect = function() {" +
-            "const originalResult = originalGetBoundingClientRect.call(this);" +
+            "const originalResult = originalBoundingClientRect.call(this);" +
             "if (this instanceof Element && this.tagName.toLowerCase() == \"span\") {" +
             "const computedStyle = window.getComputedStyle(this);" +
             "if (computedStyle.fontFamily == \"system-ui\") {" +
@@ -88,7 +88,7 @@ var config = [
         code: "const originalBoundingClientRect = "+
             "Element.prototype.getBoundingClientRect;" +
             "Element.prototype.getBoundingClientRect = function() {" +
-            "const originalResult = originalGetBoundingClientRect.call(this);" +
+            "const originalResult = originalBoundingClientRect.call(this);" +
             "if (this instanceof Element && this.tagName.toLowerCase() == \"span\") {" +
             "const computedStyle = window.getComputedStyle(this);" +
             "if (computedStyle.fontSize == \"1px\") {" +
@@ -109,7 +109,7 @@ var config = [
         code: "const originalBoundingClientRect = "+
             "Element.prototype.getBoundingClientRect;" +
             "Element.prototype.getBoundingClientRect = function() {" +
-            "const originalResult = originalGetBoundingClientRect.call(this);" +
+            "const originalResult = originalBoundingClientRect.call(this);" +
             "if (this instanceof Element && this.tagName.toLowerCase() == \"span\") {" +
             "const modifiedResult = {" +
             "top: originalResult.top," +

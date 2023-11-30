@@ -13,7 +13,7 @@ var config = [
 	    "right: originalResult.right," +
 	    "bottom: originalResult.bottom," +
 	    "left: originalResult.left," +
-	    "width: etrigan_placeholder" +
+	    "width: etrigan_placeholder," +
 	    "height: originalResult.height};" +
 	    "return modifiedResult;" +
 	    "}}" +
@@ -34,7 +34,7 @@ var config = [
             "right: originalResult.right," +
             "bottom: originalResult.bottom," +
             "left: originalResult.left," +
-            "width: etrigan_placeholder" +
+            "width: etrigan_placeholder," +
             "height: originalResult.height};" +
             "return modifiedResult;" +
             "}}" +
@@ -55,7 +55,7 @@ var config = [
             "right: originalResult.right," +
             "bottom: originalResult.bottom," +
             "left: originalResult.left," +
-            "width: etrigan_placeholder" +
+            "width: etrigan_placeholder," +
             "height: originalResult.height};" +
             "return modifiedResult;" +
             "}}" +
@@ -76,7 +76,7 @@ var config = [
             "right: originalResult.right," +
             "bottom: originalResult.bottom," +
             "left: originalResult.left," +
-            "width: etrigan_placeholder" +
+            "width: etrigan_placeholder," +
             "height: originalResult.height};" +
             "return modifiedResult;" +
             "}}" +
@@ -97,7 +97,7 @@ var config = [
             "right: originalResult.right," +
 	    "bottom: originalResult.bottom," +
             "left: originalResult.left," +
-            "width: etrigan_placeholder" +
+            "width: etrigan_placeholder," +
             "height: originalResult.height};" +
             "return modifiedResult;" +
             "}}" +
@@ -116,7 +116,7 @@ var config = [
             "right: originalResult.right," +
 	    "bottom: originalResult.bottom," +
             "left: originalResult.left," +
-            "width: etrigan_placeholder" +
+            "width: etrigan_placeholder," +
             "height: originalResult.height};" +
             "return modifiedResult;" +
             "}" +

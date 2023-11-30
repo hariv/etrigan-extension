@@ -631,17 +631,13 @@ var config = [
 	featureName: "plugins",
 	code: "Object.defineProperty(navigator, \"plugins\", { " +
 	    "value: etrigan_placeholder});",
-	value: "let plugins = [];" +
-	    "let p = {};" +
-	    "p.name = \"Etrigan Plugin\";" +
-	    "p.description = \"Etrigan Plugin for Paper\";"+
-	    "p[0] = {};" +
-	    "p[0].suffixes = \"pdf\";" +
-	    "p[0].type = \"application/pdf\";" +
-	    "p[1] = {};" +
-	    "p[1].suffixes = \"pdf\";" +
-	    "p[1].type = \"text/pdf\";" +
-	    "plugins.push(p);",
+	value: "length: 1, item: function(index) {" +
+	    " return this[index];}, refresh: function() {}," +
+	    "[0]: {name: \"Etrigan Plugin\", description: " +
+	    "\"Etrigan Plugin for Paper\", length: 2, item: " +
+	    "function(index) { return this[index]; }, [0]: {" +
+	    " suffixes: \"pdf\", type: \"application/pdf\"" +
+	    "}, [1]: {suffixes: \"pdf\", type: \"text/pdf\"}}"
     },
     {
 	featureName: "vendorFlavors",

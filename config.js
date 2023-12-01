@@ -454,26 +454,26 @@ var config = [
 	    "let res = originalMatchMedia(q);" +
 	    "if (etriganTarget == \"-1\") { " +
 	    "if (q == \"(prefers-contrast: less)\" || q == \"(prefers-contrast: low)\") { " +
-	    "res.matches = true;" +
+	    "Object.defineProperty(res, \"matches\", {value: true});" +
 	    "}" +
 	    "}" +
 	    "if (etriganTarget == \"0\") { " +
 	    "if (q == \"(prefers-contrast: no-preference)\") { " +
-	    "res.matches = true;" +
+	    "Object.defineProperty(res, \"matches\", {value: true});" +
 	    "}" +
 	    "}" +
 	    "if (etriganTarget == \"1\") { " +
 	    "if (q == \"(prefers-contrast: more)\" || q == \"(prefers-contrast: high)\") { " +
-	    "res.matches = true;" +
+	    "Object.defineProperty(res, \"matches\", {value: true});" +
 	    "}" +
 	    "}" +
 	    "if (etriganTarget == \"10\") { " +
 	    "if (q == \"(prefers-contrast: forced)\") { " +
-	    "res.matches = true;" +
+	    "Object.defineProperty(res, \"matches\", {value: true});" +
 	    "}" +
 	    "}" +
 	    "if (etriganTarget == \"undefined\") { " +
-	    "res.matches = false;" +
+	    "Object.defineProperty(res, \"matches\", {value: false});" +
 	    "}" +
 	    "return res;" +
 	    "}",
@@ -487,16 +487,16 @@ var config = [
 	    "let res = originalMatchMedia(q);" +
 	    "if (etriganTarget == \"1\") { " +
 	    "if (q == \"(forced-colors: active)\") { " +
-	    "res.matches = true;" +
+	    "Object.defineProperty(res, \"matches\", {value: true});" +
 	    "}" +
 	    "}" +
 	    "if (etriganTest == \"0\") { " +
 	    "if (q == \"(forced-colors: none)\") { " +
-	    "res.matches = true;" +
+	    "Object.defineProperty(res, \"matches\", {value: true});" +
 	    "}" +
 	    "}" +
 	    "if (etriganTarget == \"undefined\") { " +
-	    "res.matches = false;" +
+	    "Object.defineProperty(res, \"matches\", {value: false});" +
 	    "}" +
 	    "return res;" +
 	    "}",
@@ -510,16 +510,16 @@ var config = [
 	    "let res = originalMatchMedia(q);" +
 	    "if (etriganTarget == \"1\") { " +
 	    "if (q == \"(dynamic-range: high)\") { " +
-	    "res.matches = true;" +
+	    "Object.defineProperty(res, \"matches\", {value: true});" +
 	    "}" +
 	    "}" +
 	    "if (etriganTarget == \"0\") { " +
 	    "if (q == \"(dynamic-range: standard)\") { " +
-	    "res.matches = true;" +
+	    "Object.defineProperty(res, \"matches\", {value: true});" +
 	    "}" +
 	    "}" +
 	    "if (etriganTarget == \"undefined\") { " +
-	    "res.matches = false;" +
+	    "Object.defineProperty(res, \"matches\", {value: false});" +
 	    "}" +
 	    "return res;" +
 	    "}",
@@ -533,16 +533,16 @@ var config = [
 	    "let res = originalMatchMedia(q);" +
 	    "if (etriganTarget == \"1\") { " +
 	    "if (q == \"(inverted-colors: inverted)\") { " +
-	    "res.matches = true;" +
+	    "Object.defineProperty(res, \"matches\", {value: true});" +
 	    "}" +
 	    "}" +
 	    "if (etriganTarget == \"0\") { " +
 	    "if (q == \"(inverted-colors: none)\") { " +
-	    "res.matches = true;" +
+	    "Object.defineProperty(res, \"matches\", {value: true});" +
 	    "}" +
 	    "}" +
 	    "if (etriganTarget == \"undefined\") { " +
-	    "res.matches = false;" +
+	    "Object.defineProperty(res, \"matches\", {value: false});" +
 	    "}" +
 	    "return res;"+
 	    "}",
@@ -556,16 +556,16 @@ var config = [
 	    "let res = originalMatchMedia(q);" +
 	    "if (etriganTarget == \"1\") { " +
 	    "if (q == \"(prefers-reduced-motion: reduce)\") { " +
-	    "res.matches = true;" +
+	    "Object.defineProperty(res, \"matches\", {value: true});" +
 	    "}" +
 	    "}" +
 	    "if (etriganTarget == \"0\") { " +
 	    "if (q == \"(prefers-reduced-motion: no-preference)\") { " +
-	    "res.matches = true;" +
+	    "Object.defineProperty(res, \"matches\", {value: true});" +
 	    "}" +
 	    "}" +
 	    "if (etriganTarget == \"undefined\") { " +
-	    "res.matches = false;" +
+	    "Object.defineProperty(res, \"matches\", {value: false});" +
 	    "}" +
 	    "return res;" +
 	    "}",
@@ -579,17 +579,17 @@ var config = [
 	    "let res = originalMatchMedia(q);" +
 	    "if (etriganTarget == \"undefined\") { " +
 	    "if (q == \"(min-monochrome: 0)\") { " +
-	    "res.matches = true;" +
+	    "Object.defineProperty(res, \"matches\", {value: true});" +
 	    "}" +
 	    "}" +
 	    "else {" +
 	    "for (let i = 0; i < parseInt(etriganTarget); i++) { " +
 	    "if (q == \"(min-monochrome: i.toString())\") { " +
-	    "res.matches = false;" +
+	    "Object.defineProperty(res, \"matches\", {value: true});" +
 	    "}" +
 	    "}" +
 	    "if (q == \"(min-monochrome: etriganTarget)\") { " +
-	    "res.matches = true;" +
+	    "Object.defineProperty(res, \"matches\", {value: true});" +
 	    "}" +
 	    "}" + 
 	    "return res;" +
@@ -603,11 +603,11 @@ var config = [
 	    "let etriganTarget = \"etrigan_placeholder\";" +
 	    "window.matchMedia = function(q) { " +
 	    "if (etriganTarget == \"undefined\") { " +
-	    "res.matches = false;" +
+	    "Object.defineProperty(res, \"matches\", {value: false});" +
 	    "}" +
 	    "else {" +
 	    "if (q == \"(color-gamut: etriganTarget)\") { " +
-	    "res.matches = true;" +
+	    "Object.defineProperty(res, \"matches\", {value: true});" +
 	    "}" +
 	    "}" +
 	    "return res;" +

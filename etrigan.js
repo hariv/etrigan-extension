@@ -7,4 +7,4 @@ var script = document.createElement('script');
 script.setAttribute('type', 'text/javascript');
 script.innerHTML = etrigan;
 (document.head || document.documentElement).appendChild(script);
-script.parentNode.removeChild(script);
+//script.parentNode.removeChild(script);

@@ -1,7 +1,6 @@
 let featureIndex = 0;
 let etrigan = '';
-let spoof = ["deviceMemory", "hardwareConcurrency", "languages", "platform", "timezone","touchSupportMaxTouchPoints", "touchSupportTouchStart", "touchSupp
-portTouchEvent", "fontPreferencesSystem", "webdriver"]
+let spoof = ["deviceMemory", "hardwareConcurrency", "languages", "platform", "timezone","touchSupportMaxTouchPoints", "touchSupportTouchStart", "touchSuppportTouchEvent", "fontPreferencesSystem", "webdriver"]
 for (let i = 0; i < spoof.length; i++){
     let feature = spoof[i];
     console.log(`Spoofing Feature: ${feature}`);

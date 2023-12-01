@@ -631,13 +631,13 @@ var config = [
 	featureName: "plugins",
 	code: "Object.defineProperty(navigator, \"plugins\", { " +
 	    "value: etrigan_placeholder});",
-	value: "length: 1, item: function(index) {" +
+	value: "{length: 1, item: function(index) {" +
 	    " return this[index];}, refresh: function() {}," +
 	    "[0]: {name: \"Etrigan Plugin\", description: " +
 	    "\"Etrigan Plugin for Paper\", length: 2, item: " +
 	    "function(index) { return this[index]; }, [0]: {" +
 	    " suffixes: \"pdf\", type: \"application/pdf\"" +
-	    "}, [1]: {suffixes: \"pdf\", type: \"text/pdf\"}}"
+	    "}, [1]: {suffixes: \"pdf\", type: \"text/pdf\"}}}"
     },
     {
 	featureName: "vendorFlavors",

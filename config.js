@@ -705,10 +705,10 @@ var config = [
 	value: true
     },
     {
-	featureName: "userAgent",
-	code: "Object.defineProperty(navigator, \"userAgent\", " +
-            "{ value: \"etrigan_placeholder\"});",
-	value: "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36"
+	featureName: "webdriver",
+	code: "Object.defineProperty(navigator, \"webdriver\", " +
+            "{ value: false});",
+	value: false
     }
 ];
 globalThis.config = config;

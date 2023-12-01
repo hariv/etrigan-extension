@@ -4,7 +4,6 @@
     "version": "1.0",
     "manifest_version": 2,
     "content_scripts": [{
-	"run_at:" "document_start", 
 	"matches": ["https://*/*"],
 	"js": ["feature_map.js", "config.js", "etrigan.js"]
     }]

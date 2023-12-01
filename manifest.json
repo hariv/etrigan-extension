@@ -5,6 +5,6 @@
     "manifest_version": 2,
     "content_scripts": [{
 	"matches": ["https://*/*"],
-	"js": ["config.js", "etrigan.js"]
+	"js": ["feature_map.js", "config.js", "etrigan.js"]
     }]
 }

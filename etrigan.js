@@ -1,10 +1,11 @@
 let featureIndex = 0;
 let etrigan = '';
-let spoof = ["deviceMemory", "hardwareConcurrency", "languages", "platform", "timezone","touchSupportMaxTouchPoints", "touchSupportTouchStart", "touchSuppportTouchEvent", "fontPreferencesSystem", "webdriver"]
+let spoof = ["deviceMemory", "hardwareConcurrency", "languages", "platform", "timezone","touchSupportMaxTouchPoints", "touchSupportTouchStart", "touchSupportTouchEvent", "fontPreferencesSystem", "webdriver"];
 for (let i = 0; i < spoof.length; i++){
     let feature = spoof[i];
-    console.log(`Spoofing Feature: ${feature}`);
-    featureIndex = globalThis.featureMap[spoof[i]];
+   //  console.log(`Spoofing Feature: ${feature}`);
+    featureIndex = globalThis.featureMap[feature];
+    console.log(feature, featureIndex, i, spoof[i], spoof.length)
     let tmp = globalThis.config[featureIndex].code
     if (feature ==  "deviceMemory") {
         tmp = tmp.replace("etrigan_placeholder", 2);
@@ -21,7 +22,7 @@ for (let i = 0; i < spoof.length; i++){
      }else {
         tmp = tmp.replace("etrigan_placeholder", globalThis.config[featureIndex].value);
     }     
-  etrigan += tmp;
+    etrigan += tmp;
 }
 // Script injection 
 var script = document.createElement('script');

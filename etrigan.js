@@ -15,7 +15,7 @@ for (let i = 0; i < spoof.length; i++){
         tmp = tmp.replace("etrigan_placeholder", "Win32");
     } else if (feature == "timezone"){
         tmp = tmp.replace("etrigan_placeholder", "Asia/Shanghai");
-    } else if (feature = "touchSupportMaxTouchPoints") {
+    } else if (feature == "touchSupportMaxTouchPoints") {
         tmp = tmp.replace("etrigan_placeholder", [4]);
      } else if (feature == "fontPreferencesSystem") {
              tmp = tmp.replace("etrigan_placeholder", 161.296875);

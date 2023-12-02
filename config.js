@@ -17,7 +17,7 @@ var config = [
 	    "height: originalResult.height};" +
 	    "return modifiedResult;" +
 	    "}}" +
-	    "return originalResult;}",
+	    "return originalResult;};",
 	value: 140
     },
     {
@@ -38,7 +38,7 @@ var config = [
             "height: originalResult.height};" +
             "return modifiedResult;" +
             "}}" +
-            "return originalResult;}",
+            "return originalResult;};",
         value: 140
     },
     {
@@ -59,7 +59,7 @@ var config = [
             "height: originalResult.height};" +
             "return modifiedResult;" +
             "}}" +
-            "return originalResult;}",
+            "return originalResult;};",
         value: 140
     },
     {
@@ -80,7 +80,7 @@ var config = [
             "height: originalResult.height};" +
             "return modifiedResult;" +
             "}}" +
-            "return originalResult;}",
+            "return originalResult;};",
         value: 140
     },
     {
@@ -101,7 +101,7 @@ var config = [
             "height: originalResult.height};" +
             "return modifiedResult;" +
             "}}" +
-            "return originalResult;}",
+            "return originalResult;};",
         value: 140
     },
     {
@@ -120,7 +120,7 @@ var config = [
             "height: originalResult.height};" +
             "return modifiedResult;" +
             "}" +
-            "return originalResult;}",
+            "return originalResult;};",
         value: 140
     },
     {

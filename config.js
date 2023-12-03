@@ -1,10 +1,10 @@
 var config = [
     {
 	featureName: "fontPreferencesMono",
-	code: "const originalBoundingClientRect = "+
+	code: "const originalBoundingClientRect_Mono = "+
 	    "Element.prototype.getBoundingClientRect;" +
 	    "Element.prototype.getBoundingClientRect = function() {" +
-	    "const originalResult = originalBoundingClientRect.call(this);" +
+	    "const originalResult = originalBoundingClientRect_Mono.call(this);" +
 	    "if (this instanceof Element && this.tagName.toLowerCase() == \"span\") {" +
 	    "const computedStyle = window.getComputedStyle(this);" +
 	    "if (computedStyle.fontFamily == \"monospace\") {" +
@@ -22,10 +22,10 @@ var config = [
     },
     {
 	featureName: "fontPreferencesSans",
-	code: "const originalBoundingClientRect = "+
+	code: "const originalBoundingClientRect_Sans = "+
             "Element.prototype.getBoundingClientRect;" +
             "Element.prototype.getBoundingClientRect = function() {" +
-            "const originalResult = originalBoundingClientRect.call(this);" +
+            "const originalResult = originalBoundingClientRect_Sans.call(this);" +
             "if (this instanceof Element && this.tagName.toLowerCase() == \"span\") {" +
             "const computedStyle = window.getComputedStyle(this);" +
             "if (computedStyle.fontFamily == \"sans-serif\") {" +
@@ -43,10 +43,10 @@ var config = [
     },
     {
         featureName: "fontPreferencesSerif",
-        code: "const originalBoundingClientRect = "+
+        code: "const originalBoundingClientRect_Serif = "+
             "Element.prototype.getBoundingClientRect;" +
             "Element.prototype.getBoundingClientRect = function() {" +
-            "const originalResult = originalBoundingClientRect.call(this);" +
+            "const originalResult = originalBoundingClientRect_Serif.call(this);" +
             "if (this instanceof Element && this.tagName.toLowerCase() == \"span\") {" +
             "const computedStyle = window.getComputedStyle(this);" +
             "if (computedStyle.fontFamily == \"serif\") {" +
@@ -64,10 +64,10 @@ var config = [
     },
     {
         featureName: "fontPreferencesSystem",
-        code: "const originalBoundingClientRect = "+
+        code: "const originalBoundingClientRect_System = "+
             "Element.prototype.getBoundingClientRect;" +
             "Element.prototype.getBoundingClientRect = function() {" +
-            "const originalResult = originalBoundingClientRect.call(this);" +
+            "const originalResult = originalBoundingClientRect_System.call(this);" +
             "if (this instanceof Element && this.tagName.toLowerCase() == \"span\") {" +
             "const computedStyle = window.getComputedStyle(this);" +
             "if (computedStyle.fontFamily == \"system-ui\") {" +
@@ -85,10 +85,10 @@ var config = [
     },
     {
         featureName: "fontPreferencesMin",
-        code: "const originalBoundingClientRect = "+
+        code: "const originalBoundingClientRect_Min = "+
             "Element.prototype.getBoundingClientRect;" +
             "Element.prototype.getBoundingClientRect = function() {" +
-            "const originalResult = originalBoundingClientRect.call(this);" +
+            "const originalResult = originalBoundingClientRect_Min.call(this);" +
             "if (this instanceof Element && this.tagName.toLowerCase() == \"span\") {" +
             "const computedStyle = window.getComputedStyle(this);" +
             "if (computedStyle.fontSize == \"1px\") {" +
@@ -106,10 +106,10 @@ var config = [
     },
     {
         featureName: "fontPreferencesDefault",
-        code: "const originalBoundingClientRect = "+
+        code: "const originalBoundingClientRect_Default = "+
             "Element.prototype.getBoundingClientRect;" +
             "Element.prototype.getBoundingClientRect = function() {" +
-            "const originalResult = originalBoundingClientRect.call(this);" +
+            "const originalResult = originalBoundingClientRect_Default.call(this);" +
             "if (this instanceof Element && this.tagName.toLowerCase() == \"span\") {" +
             "const modifiedResult = {" +
             "top: originalResult.top," +
@@ -448,36 +448,36 @@ var config = [
     },
     {
 	featureName: "contrast",
-	code: "let originalMatchMedia = window.matchMedia;" +
-	    "let etriganTarget = \"etrigan_placeholder\";" +
+	code: "let originalMatchMedia_contrast = window.matchMedia;" +
+	    "let etriganTarget_contrast = \"etrigan_placeholder\";" +
 	    "window.matchMedia = function(q) { " +
-	    "let res = originalMatchMedia(q);" +
-	    "if (etriganTarget == \"-1\") { " +
+	    "let res = originalMatchMedia_contrast(q);" +
+	    "if (etriganTarget_contrast == \"-1\") { " +
 	    "if (q == \"(prefers-contrast: less)\" || q == \"(prefers-contrast: low)\") { " +
 	    "Object.defineProperty(res, \"matches\", {value: true});" +
 	    "}" +
 	    "}" +
-	    "if (etriganTarget == \"0\") { " +
+	    "if (etriganTarget_contrast == \"0\") { " +
 	    "if (q == \"(prefers-contrast: no-preference)\") { " +
 	    "Object.defineProperty(res, \"matches\", {value: true});" +
 	    "}" +
 	    "}" +
-	    "if (etriganTarget == \"1\") { " +
+	    "if (etriganTarget_contrast == \"1\") { " +
 	    "if (q == \"(prefers-contrast: more)\" || q == \"(prefers-contrast: high)\") { " +
 	    "Object.defineProperty(res, \"matches\", {value: true});" +
 	    "}" +
 	    "}" +
-	    "if (etriganTarget == \"10\") { " +
+	    "if (etriganTarget_contrast == \"10\") { " +
 	    "if (q == \"(prefers-contrast: forced)\") { " +
 	    "Object.defineProperty(res, \"matches\", {value: true});" +
 	    "}" +
 	    "}" +
-	    "if (etriganTarget == \"undefined\") { " +
+	    "if (etriganTarget_contrast == \"undefined\") { " +
 	    "Object.defineProperty(res, \"matches\", {value: false});" +
 	    "}" +
 	    "return res;" +
-	    "}",
-	value: "-1"
+	    "};",
+	value: "1"
     },
     {
 	featureName: "forcedColors",
@@ -550,25 +550,25 @@ var config = [
     },
     {
 	featureName: "reducedMotion",
-	code: "let originalMatchMedia = window.matchMedia;" +
-	    "let etriganTarget = \"etrigan_placeholder\";" +
+	code: "let originalMatchMedia_RM = window.matchMedia;" +
+	    "let etriganTarget_RM = \"etrigan_placeholder\";" +
 	    "window.matchMedia = function(q) { " +
-	    "let res = originalMatchMedia(q);" +
-	    "if (etriganTarget == \"1\") { " +
+	    "let res = originalMatchMedia_RM(q);" +
+	    "if (etriganTarget_RM == \"1\") { " +
 	    "if (q == \"(prefers-reduced-motion: reduce)\") { " +
 	    "Object.defineProperty(res, \"matches\", {value: true});" +
 	    "}" +
 	    "}" +
-	    "if (etriganTarget == \"0\") { " +
+	    "if (etriganTarget_RM == \"0\") { " +
 	    "if (q == \"(prefers-reduced-motion: no-preference)\") { " +
 	    "Object.defineProperty(res, \"matches\", {value: true});" +
 	    "}" +
 	    "}" +
-	    "if (etriganTarget == \"undefined\") { " +
+	    "if (etriganTarget_RM == \"undefined\") { " +
 	    "Object.defineProperty(res, \"matches\", {value: false});" +
 	    "}" +
 	    "return res;" +
-	    "}",
+	    "};",
 	value: "1"
     },
     {

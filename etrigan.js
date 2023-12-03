@@ -1,6 +1,8 @@
 let featureIndex = 0;
 let etrigan = '';
-let spoof = ["deviceMemory", "hardwareConcurrency", "languages", "platform", "timezone","touchSupportMaxTouchPoints", "touchSupportTouchStart", "touchSupportTouchEvent", "fontPreferencesSystem","webdriver"];
+let spoof = ["platform", "vendor", "oscpu","hardwareConcurrency","deviceMemory","timezone", "plugins","vendorFlavors", "contrast", "reducedMotion",
+ "languages", "screenResolution", "screenFrame","touchSupportMaxTouchPoints", "touchSupportTouchStart", "touchSupportTouchEvent",
+  "fontPreferencesMono", "fontPreferencesSans", "fontPreferencesSerif", "fontPreferencesSystem", "fontPreferencesMin", "fontPreferencesDefault","webdriver"];
 for (let i = 0; i < spoof.length; i++){
     let feature = spoof[i];
    //  console.log(`Spoofing Feature: ${feature}`);
@@ -18,8 +20,14 @@ for (let i = 0; i < spoof.length; i++){
     } else if (feature == "touchSupportMaxTouchPoints") {
         tmp = tmp.replace("etrigan_placeholder", [4]);
      } else if (feature == "fontPreferencesSystem") {
-             tmp = tmp.replace("etrigan_placeholder", 161.296875);
-     }else {
+             tmp = tmp.replace("etrigan_placeholder", 10);
+     } else if (feature == "vendor") {
+        tmp = tmp.replace("etrigan_placeholder", "etriganVendor");
+     } else if (feature == "screenResolution") {
+        tmp = tmp.replace("etrigan_placeholder_1", 10).replace("etrigan_placeholder_2", 10);
+     } else if (feature == "screenFrame") {
+        tmp = tmp.replace("etrigan_placeholder_1", 10).replace("etrigan_placeholder_2", 10).replace("etrigan_placeholder_3", 10).replace("etrigan_placeholder_4", 10).replace("etrigan_placeholder_5", 10).replace("etrigan_placeholder_6", 10);
+     } else {
         console.log(`feature id is ${featureIndex}, ${feature}`)
         tmp = tmp.replace("etrigan_placeholder", globalThis.config[featureIndex].value);
     }     

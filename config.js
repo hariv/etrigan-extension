@@ -456,20 +456,32 @@ var config = [
 	    "if (q == \"(prefers-contrast: less)\" || q == \"(prefers-contrast: low)\") { " +
 	    "Object.defineProperty(res, \"matches\", {value: true});" +
 	    "}" +
+	    "else {" +
+	    "Object.defineProperty(res, \"matches\", {value: false});" +
+	    "}" +
 	    "}" +
 	    "if (etriganTarget_contrast == \"0\") { " +
 	    "if (q == \"(prefers-contrast: no-preference)\") { " +
 	    "Object.defineProperty(res, \"matches\", {value: true});" +
+	    "}" +
+	    "else {" +
+	    "Object.defineProperty(res, \"matches\", {value: false});" +
 	    "}" +
 	    "}" +
 	    "if (etriganTarget_contrast == \"1\") { " +
 	    "if (q == \"(prefers-contrast: more)\" || q == \"(prefers-contrast: high)\") { " +
 	    "Object.defineProperty(res, \"matches\", {value: true});" +
 	    "}" +
+	    "else {" +
+	    "Object.defineProperty(res, \"matches\", {value: false});" +
+	    "}" +
 	    "}" +
 	    "if (etriganTarget_contrast == \"10\") { " +
 	    "if (q == \"(prefers-contrast: forced)\") { " +
 	    "Object.defineProperty(res, \"matches\", {value: true});" +
+	    "}" +
+	    "else {" +
+	    "Object.defineProperty(res, \"matches\", {value: false});" +
 	    "}" +
 	    "}" +
 	    "if (etriganTarget_contrast == \"undefined\") { " +

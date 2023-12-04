@@ -570,11 +570,17 @@ var config = [
 	    "if (q == \"(prefers-reduced-motion: reduce)\") { " +
 	    "Object.defineProperty(res, \"matches\", {value: true});" +
 	    "}" +
+	    "else {" +
+	    "Object.defineProperty(res, \"matches\", {value: false});" +
+	    "}" +
 	    "}" +
 	    "if (etriganTarget_RM == \"0\") { " +
 	    "if (q == \"(prefers-reduced-motion: no-preference)\") { " +
 	    "Object.defineProperty(res, \"matches\", {value: true});" +
 	    "}" +
+	    "else {" +
+	    "Object.defineProperty(res, \"matches\", {value: false});" +
+	    "}"+
 	    "}" +
 	    "if (etriganTarget_RM == \"undefined\") { " +
 	    "Object.defineProperty(res, \"matches\", {value: false});" +

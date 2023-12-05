@@ -454,38 +454,38 @@ var config = [
 	    "let res = originalMatchMedia_contrast(q);" +
 	    "if (etriganTarget_contrast == \"-1\") { " +
 	    "if (q == \"(prefers-contrast: less)\" || q == \"(prefers-contrast: low)\") { " +
-	    "Object.defineProperty(res, \"matches\", {value: true});" +
+	    "Object.defineProperty(res, \"matches\", {value: true, configurable: true, writable: true});" +
 	    "}" +
 	    "else {" +
-	    "Object.defineProperty(res, \"matches\", {value: false});" +
+	    "Object.defineProperty(res, \"matches\", {value: false, configurable: true, writable: true});" +
 	    "}" +
 	    "}" +
 	    "if (etriganTarget_contrast == \"0\") { " +
 	    "if (q == \"(prefers-contrast: no-preference)\") { " +
-	    "Object.defineProperty(res, \"matches\", {value: true});" +
+	    "Object.defineProperty(res, \"matches\", {value: true, configurable: true, writable: true});" +
 	    "}" +
 	    "else {" +
-	    "Object.defineProperty(res, \"matches\", {value: false});" +
+	    "Object.defineProperty(res, \"matches\", {value: false, configurable: true, writable: true});" +
 	    "}" +
 	    "}" +
 	    "if (etriganTarget_contrast == \"1\") { " +
 	    "if (q == \"(prefers-contrast: more)\" || q == \"(prefers-contrast: high)\") { " +
-	    "Object.defineProperty(res, \"matches\", {value: true});" +
+	    "Object.defineProperty(res, \"matches\", {value: true, configurable: true, writable: true});" +
 	    "}" +
 	    "else {" +
-	    "Object.defineProperty(res, \"matches\", {value: false});" +
+	    "Object.defineProperty(res, \"matches\", {value: false, configurable: true, writable: true});" +
 	    "}" +
 	    "}" +
 	    "if (etriganTarget_contrast == \"10\") { " +
 	    "if (q == \"(prefers-contrast: forced)\") { " +
-	    "Object.defineProperty(res, \"matches\", {value: true});" +
+	    "Object.defineProperty(res, \"matches\", {value: true, configurable: true, writable: true});" +
 	    "}" +
 	    "else {" +
-	    "Object.defineProperty(res, \"matches\", {value: false});" +
+	    "Object.defineProperty(res, \"matches\", {value: false, configurable: true, writable: true});" +
 	    "}" +
 	    "}" +
 	    "if (etriganTarget_contrast == \"undefined\") { " +
-	    "Object.defineProperty(res, \"matches\", {value: false});" +
+	    "Object.defineProperty(res, \"matches\", {value: false, configurable: true, writable: true});" +
 	    "}" +
 	    "return res;" +
 	    "};",
@@ -568,22 +568,22 @@ var config = [
 	    "let res = originalMatchMedia_RM(q);" +
 	    "if (etriganTarget_RM == \"1\") { " +
 	    "if (q == \"(prefers-reduced-motion: reduce)\") { " +
-	    "Object.defineProperty(res, \"matches\", {value: true});" +
+	    "Object.defineProperty(res, \"matches\", {value: true, configurable: true, writable: true});" +
 	    "}" +
 	    "else {" +
-	    "Object.defineProperty(res, \"matches\", {value: false});" +
+	    "Object.defineProperty(res, \"matches\", {value: false, configurable: true, writable: true});" +
 	    "}" +
 	    "}" +
 	    "if (etriganTarget_RM == \"0\") { " +
 	    "if (q == \"(prefers-reduced-motion: no-preference)\") { " +
-	    "Object.defineProperty(res, \"matches\", {value: true});" +
+	    "Object.defineProperty(res, \"matches\", {value: true, configurable: true, writable: true});" +
 	    "}" +
 	    "else {" +
-	    "Object.defineProperty(res, \"matches\", {value: false});" +
+	    "Object.defineProperty(res, \"matches\", {value: false, configurable: true, writable: true});" +
 	    "}"+
 	    "}" +
 	    "if (etriganTarget_RM == \"undefined\") { " +
-	    "Object.defineProperty(res, \"matches\", {value: false});" +
+	    "Object.defineProperty(res, \"matches\", {value: false, configurable: true, writable: true});" +
 	    "}" +
 	    "return res;" +
 	    "};",

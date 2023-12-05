@@ -4,7 +4,7 @@ let etrigan = '';
 //	     "languages", "screenResolution", "screenFrame","touchSupportMaxTouchPoints", "touchSupportTouchStart", "touchSupportTouchEvent",
 //	     "fontPreferencesMono", "fontPreferencesSans", "fontPreferencesSerif", "fontPreferencesSystem", "fontPreferencesMin", "fontPreferencesDefault","webdriver"];
 //let spoof = ["contrast", "reducedMotion"];
-let spoof = ["reducedMotion"];
+let spoof = ["reducedMotion", "contrast"];
 for (let i = 0; i < spoof.length; i++){
     let feature = spoof[i];
    //  console.log(`Spoofing Feature: ${feature}`);

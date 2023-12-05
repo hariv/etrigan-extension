@@ -452,6 +452,7 @@ var config = [
 	    "let etriganTarget_contrast = \"etrigan_placeholder\";" +
 	    "window.matchMedia = function(q) { " +
 	    "let res = originalMatchMedia_contrast(q);" +
+	    "if (!q.includes(\"prefers-reduced-motion\")){" +
 	    "if (etriganTarget_contrast == \"-1\") { " +
 	    "if (q == \"(prefers-contrast: less)\" || q == \"(prefers-contrast: low)\") { " +
 	    "Object.defineProperty(res, \"matches\", {value: true, configurable: true, writable: true});" +
@@ -486,6 +487,7 @@ var config = [
 	    "}" +
 	    "if (etriganTarget_contrast == \"undefined\") { " +
 	    "Object.defineProperty(res, \"matches\", {value: false, configurable: true, writable: true});" +
+	    "}" +
 	    "}" +
 	    "return res;" +
 	    "};",
@@ -566,6 +568,7 @@ var config = [
 	    "let etriganTarget_RM = \"etrigan_placeholder\";" +
 	    "window.matchMedia = function(q) { " +
 	    "let res = originalMatchMedia_RM(q);" +
+	    "if (!q.includes(\"prefers-contrast\")){" +
 	    "if (etriganTarget_RM == \"1\") { " +
 	    "if (q == \"(prefers-reduced-motion: reduce)\") { " +
 	    "Object.defineProperty(res, \"matches\", {value: true, configurable: true, writable: true});" +
@@ -584,6 +587,7 @@ var config = [
 	    "}" +
 	    "if (etriganTarget_RM == \"undefined\") { " +
 	    "Object.defineProperty(res, \"matches\", {value: false, configurable: true, writable: true});" +
+	    "}" +
 	    "}" +
 	    "return res;" +
 	    "};",

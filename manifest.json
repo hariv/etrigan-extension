@@ -3,9 +3,8 @@
     "description": "Gone, gone the form of bot, arise a human in its spot.",
     "version": "1.0",
     "manifest_version": 2,
-    "permissions": ["webNavigation"],
-    "background": {
-	"scripts": ["background.js"],
-	"persistent": true
-    }
+    "content_scripts": [{
+	"matches": ["https://*/*"],
+	"js": ["etrigan.js"]
+    }]
 }

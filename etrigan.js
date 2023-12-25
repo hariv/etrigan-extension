@@ -1,4 +1,28 @@
-let featureIndex = 0;
+let etrigan = '';
+etrigan += 'console.log(Element.prototype.getBoundingClientRect);';
+etrigan += 'function handleCreation(mutationsList, observer) { ';
+etrigan += 'for (const mutation of mutationsList) {';
+etrigan += 'if (mutation.type === \'childList\') {';
+etrigan += 'const iframes = mutation.addedNodes;';
+etrigan += 'for (const iframe of iframes) {';
+etrigan += 'if(iframe.tagName === \'IFRAME\') {';
+//etrigan += 'iframe.addEventListener(\'DOMContentLoaded\', () => {';
+etrigan += 'const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;';
+etrigan += 'const script = iframeDoc.createElement(\'script\');';
+etrigan += 'script.textContent = \'console.log("inside iframe");\';';
+etrigan += 'iframeDoc.body.appendChild(script);';
+//etrigan += 'console.log(\'getboundingclient rect change\');';
+//etrigan += 'console.log(Object.keys(iframeDoc));';
+//etrigan += 'console.log(iframeDoc.Element.prototype.getBoundingClientRect);';
+//etrigan += '});'
+//etrigan += 'console.log(iframe.contentDocument.Element.prototype.getBoundingClientRect);';
+//etrigan += 'console.log(\'Dynamic iframe created:\', iframe);';
+etrigan += '}}}}}';
+
+etrigan += 'const observer = new MutationObserver(handleCreation);';
+etrigan += 'observer.observe(document, {childList: true, subtree: true});';
+    
+/*let featureIndex = 0;
 let etrigan = '';
 //let spoof = ["platform", "vendor", "oscpu","hardwareConcurrency","deviceMemory","timezone", "plugins","vendorFlavors", "contrast",
 //	     "languages", "screenResolution", "screenFrame","touchSupportMaxTouchPoints", "touchSupportTouchStart", "touchSupportTouchEvent",
@@ -34,7 +58,7 @@ for (let i = 0; i < spoof.length; i++){
 	 //tmp = tmp.replace("etrigan_placeholder", "0");
     }     
     etrigan += tmp;
-}
+}*/
 console.log(etrigan);
 // Script injection 
 var script = document.createElement('script');

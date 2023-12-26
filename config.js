@@ -1,13 +1,33 @@
+var constants = {
+    iframeList: ["fontPreferencesMono", "fontPreferencesSans", "fontPreferencesSerif", "fontPreferencesSystem", "fontPreferencesMin", "fontPreferencesDefault"]
+};
+
+var iframeUtil = {
+    code: 'function handleCreation(mutationsList, observer) { ' +
+	'for (const mutation of mutationsList) {' +
+	'if (mutation.type === \'childList\') { ' +
+	'const iframes = mutation.addedNodes;' +
+	'for (const iframe of iframes) {' +
+	'if(iframe.tagName === \'IFRAME\') {' +
+	'const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;' +
+	'const script = iframeDoc.createElement(\'script\');' +
+	'script.textContent = "iframePlaceHolder";' +
+	'iframeDoc.body.appendChild(script);' +
+	'}}}}}' +
+	'const observer = new MutationObserver(handleCreation);' +
+	'observer.observe(document, {childList: true, subtree: true});'
+};
+
 var config = [
     {
 	featureName: "fontPreferencesMono",
-	code: "const originalBoundingClientRect_Mono = "+
+	code: "const originalBoundingClientRect_Mono = " +
 	    "Element.prototype.getBoundingClientRect;" +
 	    "Element.prototype.getBoundingClientRect = function() {" +
 	    "const originalResult = originalBoundingClientRect_Mono.call(this);" +
-	    "if (this instanceof Element && this.tagName.toLowerCase() == \"span\") {" +
+	    "if (this instanceof Element && this.tagName.toLowerCase() == 'span') {" +
 	    "const computedStyle = window.getComputedStyle(this);" +
-	    "if (computedStyle.fontFamily == \"monospace\") {" +
+	    "if (computedStyle.fontFamily == 'monospace') {" +
 	    "const modifiedResult = {" +
 	    "top: originalResult.top," +
 	    "right: originalResult.right," +
@@ -26,9 +46,9 @@ var config = [
             "Element.prototype.getBoundingClientRect;" +
             "Element.prototype.getBoundingClientRect = function() {" +
             "const originalResult = originalBoundingClientRect_Sans.call(this);" +
-            "if (this instanceof Element && this.tagName.toLowerCase() == \"span\") {" +
+            "if (this instanceof Element && this.tagName.toLowerCase() == 'span') {" +
             "const computedStyle = window.getComputedStyle(this);" +
-            "if (computedStyle.fontFamily == \"sans-serif\") {" +
+            "if (computedStyle.fontFamily == 'sans-serif') {" +
             "const modifiedResult = {" +
             "top: originalResult.top," +
             "right: originalResult.right," +
@@ -47,9 +67,9 @@ var config = [
             "Element.prototype.getBoundingClientRect;" +
             "Element.prototype.getBoundingClientRect = function() {" +
             "const originalResult = originalBoundingClientRect_Serif.call(this);" +
-            "if (this instanceof Element && this.tagName.toLowerCase() == \"span\") {" +
+            "if (this instanceof Element && this.tagName.toLowerCase() == 'span') {" +
             "const computedStyle = window.getComputedStyle(this);" +
-            "if (computedStyle.fontFamily == \"serif\") {" +
+            "if (computedStyle.fontFamily == 'serif') {" +
             "const modifiedResult = {" +
             "top: originalResult.top," +
             "right: originalResult.right," +
@@ -68,9 +88,9 @@ var config = [
             "Element.prototype.getBoundingClientRect;" +
             "Element.prototype.getBoundingClientRect = function() {" +
             "const originalResult = originalBoundingClientRect_System.call(this);" +
-            "if (this instanceof Element && this.tagName.toLowerCase() == \"span\") {" +
+            "if (this instanceof Element && this.tagName.toLowerCase() == 'span') {" +
             "const computedStyle = window.getComputedStyle(this);" +
-            "if (computedStyle.fontFamily == \"system-ui\") {" +
+            "if (computedStyle.fontFamily == 'system-ui') {" +
             "const modifiedResult = {" +
             "top: originalResult.top," +
             "right: originalResult.right," +
@@ -89,9 +109,9 @@ var config = [
             "Element.prototype.getBoundingClientRect;" +
             "Element.prototype.getBoundingClientRect = function() {" +
             "const originalResult = originalBoundingClientRect_Min.call(this);" +
-            "if (this instanceof Element && this.tagName.toLowerCase() == \"span\") {" +
+            "if (this instanceof Element && this.tagName.toLowerCase() == 'span') {" +
             "const computedStyle = window.getComputedStyle(this);" +
-            "if (computedStyle.fontSize == \"1px\") {" +
+            "if (computedStyle.fontSize == '1px') {" +
             "const modifiedResult = {" +
             "top: originalResult.top," +
             "right: originalResult.right," +
@@ -110,7 +130,7 @@ var config = [
             "Element.prototype.getBoundingClientRect;" +
             "Element.prototype.getBoundingClientRect = function() {" +
             "const originalResult = originalBoundingClientRect_Default.call(this);" +
-            "if (this instanceof Element && this.tagName.toLowerCase() == \"span\") {" +
+            "if (this instanceof Element && this.tagName.toLowerCase() == 'span') {" +
             "const modifiedResult = {" +
             "top: originalResult.top," +
             "right: originalResult.right," +
@@ -733,5 +753,8 @@ var config = [
 	value: false
     }
 ];
-globalThis.config = config;
 
+
+globalThis.iframeUtil = iframeUtil;
+globalThis.config = config;
+globalThis.constants = constants;

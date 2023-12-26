@@ -1,39 +1,23 @@
 let etrigan = '';
-etrigan += 'console.log(Element.prototype.getBoundingClientRect);';
-etrigan += 'function handleCreation(mutationsList, observer) { ';
-etrigan += 'for (const mutation of mutationsList) {';
-etrigan += 'if (mutation.type === \'childList\') {';
-etrigan += 'const iframes = mutation.addedNodes;';
-etrigan += 'for (const iframe of iframes) {';
-etrigan += 'if(iframe.tagName === \'IFRAME\') {';
-//etrigan += 'iframe.addEventListener(\'DOMContentLoaded\', () => {';
-etrigan += 'const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;';
-etrigan += 'const script = iframeDoc.createElement(\'script\');';
-etrigan += 'script.textContent = \'console.log("inside iframe");\';';
-etrigan += 'iframeDoc.body.appendChild(script);';
-//etrigan += 'console.log(\'getboundingclient rect change\');';
-//etrigan += 'console.log(Object.keys(iframeDoc));';
-//etrigan += 'console.log(iframeDoc.Element.prototype.getBoundingClientRect);';
-//etrigan += '});'
-//etrigan += 'console.log(iframe.contentDocument.Element.prototype.getBoundingClientRect);';
-//etrigan += 'console.log(\'Dynamic iframe created:\', iframe);';
-etrigan += '}}}}}';
+let featureIndex = 0;
+let observedIframeFeatures = [];
 
-etrigan += 'const observer = new MutationObserver(handleCreation);';
-etrigan += 'observer.observe(document, {childList: true, subtree: true});';
-    
-/*let featureIndex = 0;
-let etrigan = '';
 //let spoof = ["platform", "vendor", "oscpu","hardwareConcurrency","deviceMemory","timezone", "plugins","vendorFlavors", "contrast",
 //	     "languages", "screenResolution", "screenFrame","touchSupportMaxTouchPoints", "touchSupportTouchStart", "touchSupportTouchEvent",
 //	     "fontPreferencesMono", "fontPreferencesSans", "fontPreferencesSerif", "fontPreferencesSystem", "fontPreferencesMin", "fontPreferencesDefault","webdriver"];
-let spoof = ["fontPreferencesMono"];
+let spoof = ["fontPreferencesMono", "fontPreferencesSans", "fontPreferencesSerif", "fontPreferencesSystem", "fontPreferencesMin", "fontPreferencesDefault", "platform"];
+
 for (let i = 0; i < spoof.length; i++){
     let feature = spoof[i];
+    
+    if (globalThis.constants.iframeList.includes(feature)) {
+	observedIframeFeatures.push(feature);
+	continue;
+    }
    //  console.log(`Spoofing Feature: ${feature}`);
     featureIndex = globalThis.featureMap[feature];
-    console.log(feature, featureIndex, i, spoof[i], spoof.length)
-    let tmp = globalThis.config[featureIndex].code
+    console.log(feature, featureIndex, i, spoof[i], spoof.length);
+    let tmp = globalThis.config[featureIndex].code;
     if (feature ==  "deviceMemory") {
         tmp = tmp.replace("etrigan_placeholder", 2);
     } else if (feature == "languages") {
@@ -44,7 +28,7 @@ for (let i = 0; i < spoof.length; i++){
         tmp = tmp.replace("etrigan_placeholder", "Asia/Shanghai");
     } else if (feature == "touchSupportMaxTouchPoints") {
         tmp = tmp.replace("etrigan_placeholder", [4]);
-     } else if (feature == "fontPreferencesSystem") {
+     } else if (feature == "fontPreferencesSystem") { // Note that this will never get called with the new iframe util.
              tmp = tmp.replace("etrigan_placeholder", 10);
      } else if (feature == "vendor") {
         tmp = tmp.replace("etrigan_placeholder", "etriganVendor");
@@ -58,8 +42,24 @@ for (let i = 0; i < spoof.length; i++){
 	 //tmp = tmp.replace("etrigan_placeholder", "0");
     }     
     etrigan += tmp;
-}*/
+}
+
+if (observedIframeFeatures.length > 0) {
+    let baseIframeCode = globalThis.iframeUtil.code;
+    let iframeEtrigan = '';
+    
+    for (let i = 0; i < observedIframeFeatures.length; i++) {
+	let tmp = globalThis.config[globalThis.featureMap[observedIframeFeatures[i]]].code;
+	// Handle custom logic for specific features here.
+	tmp = tmp.replace("etrigan_placeholder", 20);
+	iframeEtrigan += tmp;
+    }
+    baseIframeCode = baseIframeCode.replace("iframePlaceHolder", iframeEtrigan);
+    etrigan += baseIframeCode;
+    
+}
 console.log(etrigan);
+
 // Script injection 
 var script = document.createElement('script');
 script.setAttribute('type', 'text/javascript');

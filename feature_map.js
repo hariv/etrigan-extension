@@ -56,7 +56,8 @@ var featureMap = {
     "touchSupportMaxTouchPoints": 54,
     "touchSupportTouchEvent": 55,
     "touchSupportTouchStart": 56,
-    "webdriver": 57
+    "webdriver": 57,
+    "fonts": 58
 };
 
 globalThis.featureMap = featureMap;

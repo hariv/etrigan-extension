@@ -1,5 +1,5 @@
 var constants = {
-    iframeList: ["fontPreferencesMono", "fontPreferencesSans", "fontPreferencesSerif", "fontPreferencesSystem", "fontPreferencesMin", "fontPreferencesDefault"]
+    iframeList: ["fontPreferencesMono", "fontPreferencesSans", "fontPreferencesSerif", "fontPreferencesSystem", "fontPreferencesMin", "fontPreferencesDefault", "fonts"]
 };
 
 var iframeUtil = {
@@ -751,6 +751,39 @@ var config = [
 	code: "Object.defineProperty(navigator, \"webdriver\", " +
             "{ value: false});",
 	value: false
+    },
+    {
+    featureName: "fonts",
+    code:   "const originalCreateElement = document.createElement;" +
+            "document.createElement = function(tagName) {" +
+            "const element = originalCreateElement.call(document, tagName);" +
+            "if (tagName.toLowerCase() === 'span') {" +
+            "const { style } = element;" +
+            "const setWidthAndHeight = () => {" +
+            "if (style.fontFamily.includes('etrigan_placeholder')) {" +
+            "style.width = '376';" +
+            "style.height = '56';" +
+            "}" +
+            "if (style.fontFamily.includes('Menlo')) {" +
+            "};"+
+            "};"+
+            "if (style.fontFamily) {" +
+            "setWidthAndHeight();" +
+            "} else {" +
+            "const observer = new MutationObserver((mutationsList) => {" +
+            "for (const mutation of mutationsList) {" +
+            "if (mutation.type === 'attributes' && mutation.attributeName === 'style') {" +
+            "setWidthAndHeight();" +
+            "observer.disconnect();" +
+            "}" +
+            "}" +
+            "});" +
+            "observer.observe(element, { attributes: true });" +
+            "}" +
+            "}" +
+            "return element;" +
+            "};",
+    value: 'HELV'
     }
 ];
 

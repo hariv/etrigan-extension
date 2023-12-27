@@ -5,7 +5,7 @@ let observedIframeFeatures = [];
 //let spoof = ["platform", "vendor", "oscpu","hardwareConcurrency","deviceMemory","timezone", "plugins","vendorFlavors", "contrast",
 //	     "languages", "screenResolution", "screenFrame","touchSupportMaxTouchPoints", "touchSupportTouchStart", "touchSupportTouchEvent",
 //	     "fontPreferencesMono", "fontPreferencesSans", "fontPreferencesSerif", "fontPreferencesSystem", "fontPreferencesMin", "fontPreferencesDefault","webdriver"];
-let spoof = ["fontPreferencesMono", "fontPreferencesSans", "fontPreferencesSerif", "fontPreferencesSystem", "fontPreferencesMin", "fontPreferencesDefault", "platform"];
+let spoof = ["fontPreferencesMono", "fontPreferencesSans", "fontPreferencesSerif", "fontPreferencesSystem", "fontPreferencesMin", "fontPreferencesDefault", "platform", "fonts"];
 
 for (let i = 0; i < spoof.length; i++){
     let feature = spoof[i];
@@ -51,7 +51,11 @@ if (observedIframeFeatures.length > 0) {
     for (let i = 0; i < observedIframeFeatures.length; i++) {
 	let tmp = globalThis.config[globalThis.featureMap[observedIframeFeatures[i]]].code;
 	// Handle custom logic for specific features here.
-	tmp = tmp.replace("etrigan_placeholder", 20);
+    if (observedIframeFeatures[i] == "fonts") {
+        tmp = tmp.replace('etrigan_placeholder',globalThis.config[globalThis.featureMap[observedIframeFeatures[i]]].value);
+    } else {
+        tmp = tmp.replace("etrigan_placeholder", 20);
+    }
 	iframeEtrigan += tmp;
     }
     baseIframeCode = baseIframeCode.replace("iframePlaceHolder", iframeEtrigan);
